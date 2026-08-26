@@ -52,7 +52,7 @@ export function PatientRegistrationForm() {
               Patient Registration
             </h1>
             <p className="text-sm text-primary-foreground/80">
-              Riverside Medical Center
+              Eldama Ravine Hospital
             </p>
           </div>
         </div>
@@ -101,7 +101,7 @@ export function PatientRegistrationForm() {
                   type="text"
                   autoComplete="name"
                   required
-                  placeholder="Jane Doe"
+                  placeholder="Wanjiru Kamau"
                   className={fieldClasses}
                 />
               </Field>
@@ -152,7 +152,7 @@ export function PatientRegistrationForm() {
                   type="tel"
                   autoComplete="tel"
                   required
-                  placeholder="(555) 123-4567"
+                  placeholder="0712 345 678"
                   className={fieldClasses}
                 />
               </Field>
@@ -164,7 +164,7 @@ export function PatientRegistrationForm() {
                   type="email"
                   autoComplete="email"
                   required
-                  placeholder="jane@example.com"
+                  placeholder="wanjiru@example.co.ke"
                   className={fieldClasses}
                 />
               </Field>
@@ -181,7 +181,7 @@ export function PatientRegistrationForm() {
                   rows={2}
                   autoComplete="street-address"
                   required
-                  placeholder="123 Main St, Springfield, IL 62704"
+                  placeholder="P.O. Box 45, Eldama Ravine, Baringo County"
                   className={`${fieldClasses} h-auto resize-none py-2.5 leading-relaxed`}
                 />
               </Field>
@@ -203,7 +203,7 @@ export function PatientRegistrationForm() {
                   name="emergencyName"
                   type="text"
                   required
-                  placeholder="John Doe"
+                  placeholder="Otieno Omondi"
                   className={fieldClasses}
                 />
               </Field>
@@ -214,7 +214,7 @@ export function PatientRegistrationForm() {
                   name="emergencyPhone"
                   type="tel"
                   required
-                  placeholder="(555) 987-6543"
+                  placeholder="0723 987 654"
                   className={fieldClasses}
                 />
               </Field>

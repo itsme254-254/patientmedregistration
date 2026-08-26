@@ -6,9 +6,9 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
 export const metadata: Metadata = {
-  title: 'Patient Registration | Riverside Medical Center',
+  title: 'Patient Registration | Eldama Ravine Hospital',
   description:
-    'Register as a new patient at Riverside Medical Center. Provide your personal, contact, and visit details securely.',
+    'Register as a new patient at Eldama Ravine Hospital, Baringo County. Provide your personal, contact, and visit details securely.',
   generator: 'v0.app',
   icons: {
     icon: [
