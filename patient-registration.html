@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eldama Ravine Hospital</title>
+<title>Patient Registration Form</title>
+<style>
+  :root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --bg: #f1f5f9;
+    --card-bg: #ffffff;
+    --text: #1e293b;
+    --muted: #64748b;
+    --border: #cbd5e1;
+    --error: #dc2626;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 24px 16px;
+  }
+
+  .card {
+    max-width: 680px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+
+  .card-header {
+    background: var(--primary);
+    color: #fff;
+    padding: 24px 32px;
+  }
+
+  .card-header h1 {
+    margin: 0 0 4px 0;
+    font-size: 1.5rem;
+  }
+
+  .card-header p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
+
+  form {
+    padding: 24px 32px 32px 32px;
+  }
+
+  fieldset {
+    border: none;
+    padding: 0;
+    margin: 0 0 24px 0;
+  }
+
+  legend {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--border);
+    width: 100%;
+  }
+
+  .field {
+    margin-bottom: 16px;
+  }
+
+  .row {
+    display: flex;
+    gap: 16px;
+  }
+
+  .row .field {
+    flex: 1;
+    min-width: 0;
+  }
+
+  label {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--text);
+  }
+
+  label .required {
+    color: var(--error);
+    margin-left: 2px;
+  }
+
+  input, select, textarea {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 0.95rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--text);
+    font-family: inherit;
+  }
+
+  input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 70px;
+  }
+
+  small.hint {
+    display: block;
+    margin-top: 4px;
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+
+  .actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  button {
+    flex: 1;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    background: var(--primary);
+    color: #fff;
+  }
+
+  .btn-primary:hover {
+    background: var(--primary-dark);
+  }
+
+  .btn-secondary {
+    background: #e2e8f0;
+    color: var(--text);
+  }
+
+  .btn-secondary:hover {
+    background: #cbd5e1;
+  }
+
+  #confirmation {
+    display: none;
+    margin: 0 32px 24px 32px;
+    padding: 14px 16px;
+    background: #ecfdf5;
+    border: 1px solid #10b981;
+    color: #065f46;
+    border-radius: 8px;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 480px) {
+    .row {
+      flex-direction: column;
+      gap: 0;
+    }
+    .card-header, form {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="card-header">
+      <h1>Patient Registration</h1>
+      <p>Please complete all required fields marked with *</p>
+    </div>
+
+    <div id="confirmation">✅ Registration submitted successfully. Thank you!</div>
+
+    <form id="registrationForm">
+
+      <fieldset>
+        <legend>Patient Information</legend>
+
+        <div class="field">
+          <label for="fullName">Full Name<span class="required">*</span></label>
+          <input type="text" id="fullName" name="fullName" placeholder="e.g. Jane Wanjiru Doe" required>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="dob">Date of Birth<span class="required">*</span></label>
+            <input type="date" id="dob" name="dob" required>
+          </div>
+          <div class="field">
+            <label for="gender">Gender<span class="required">*</span></label>
+            <select id="gender" name="gender" required>
+              <option value="" disabled selected>Select gender</option>
+              <option value="female">Female</option>
+              <option value="male">Male</option>
+              <option value="other">Other</option>
+              <option value="prefer-not-to-say">Prefer not to say</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="phone">Contact Number<span class="required">*</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="e.g. 0712 345 678" pattern="[0-9+\-\s]{7,15}" required>
+          </div>
+          <div class="field">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="e.g. jane@example.com">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="address">Home Address</label>
+          <textarea id="address" name="address" placeholder="Street, town, county"></textarea>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Emergency Contact</legend>
+
+        <div class="row">
+          <div class="field">
+            <label for="emergencyName">Emergency Contact Name</label>
+            <input type="text" id="emergencyName" name="emergencyName" placeholder="Full name">
+          </div>
+          <div class="field">
+            <label for="emergencyPhone">Emergency Contact Number</label>
+            <input type="tel" id="emergencyPhone" name="emergencyPhone" placeholder="Phone number">
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Visit Details</legend>
+
+        <div class="field">
+          <label for="reason">Reason for Visit</label>
+          <textarea id="reason" name="reason" placeholder="Briefly describe the reason for this visit"></textarea>
+          <small class="hint">Optional — helps front-desk staff direct you to the right department.</small>
+        </div>
+      </fieldset>
+
+      <div class="actions">
+        <button type="reset" class="btn-secondary">Clear Form</button>
+        <button type="submit" class="btn-primary">Register Patient</button>
+      </div>
+
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('registrationForm');
+    const confirmation = document.getElementById('confirmation');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (form.checkValidity()) {
+        confirmation.style.display = 'block';
+        confirmation.scrollIntoView({ behavior: 'smooth' });
+        form.reset();
+      }
+    });
+
+    form.addEventListener('reset', function () {
+      confirmation.style.display = 'none';
+    });
+  </script>
+
+</body>
+</html>
